@@ -27,8 +27,8 @@ const nunjucks = __importStar(require("nunjucks"));
 const search = __importStar(require("./search"));
 const express_1 = __importDefault(require("express"));
 const themes = require('../src/themes.json');
-const app = express_1.default();
-app.use(cookie_parser_1.default());
+const app = (0, express_1.default)();
+app.use((0, cookie_parser_1.default)());
 const env = nunjucks.configure('src/views', {
     autoescape: true,
     express: app
@@ -123,7 +123,7 @@ app.get('/settings', function (req, res) {
     });
 });
 app.use('/', express_1.default.static('src/public'));
-app.listen(80, () => console.log('pog http://localhost:80'));
+app.listen(8000, () => console.log('pog http://localhost:8000'));
 exports.default = require('require-dir')();
 setInterval(() => {
     console.log(process.memoryUsage().heapUsed / 1024 / 1024 + 'mb');

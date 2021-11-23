@@ -31,7 +31,7 @@ const httpsAgent = new https_1.Agent({
     keepAliveMsecs: 20000
 });
 async function requestRaw(url) {
-    const response = await node_fetch_1.default(url, {
+    const response = await (0, node_fetch_1.default)(url, {
         headers: {
             'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20100101 Firefox/87.0'
         },
